@@ -1,0 +1,43 @@
+<div class="container">
+  <div 
+    class="btn-toolbar my-2" 
+    role="toolbar" 
+    aria-label="Toolbar with button groups"
+  >
+    <div class="btn-group mr-2" role="group" aria-label="First group">
+      <button 
+        type="button" 
+        class="btn btn-secondary"
+        [ngClass]="{'disabled':!anterior}"
+        (click)="obtenerInfo(anterior)"
+      >
+        << Anterior
+      </button>
+      <button 
+        type="button" 
+        class="btn btn-secondary"
+        [ngClass]="{'disabled':!siguiente}"
+        (click)="obtenerInfo(siguiente)"
+      >
+        Siguiente >>
+      </button>
+    </div>
+  </div>
+  <div
+    class="row datosPersonajes"
+  >
+    <div
+      *ngFor="let item of items"
+      class="col-12 col-sm-6 col-md-4 col-lg-3 my-2"
+    >
+      <div class="card">
+        <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <p class="card-text">{{item.species}}</p>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
